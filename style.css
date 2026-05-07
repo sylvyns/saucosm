@@ -306,13 +306,13 @@ blockquote {
   margin-right: auto;
 }
 
-/* сетка карточек продуктов — 3 колонки */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   max-width: 1200px;
   margin: 40px auto 0;
+  align-items: start;
 }
 
 .product-card {
