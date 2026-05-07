@@ -1,0 +1,620 @@
+/* ================================================
+   SAUCOSM — style.css
+   Здесь прописан внешний вид всего сайта
+   ================================================ */
+
+
+/* ===== ПЕРЕМЕННЫЕ (общие цвета и шрифты) =====
+   Переменные позволяют менять цвет в одном месте
+   и он обновится сразу везде на сайте           */
+:root {
+  --bg:       #1a0d0d;       /* тёмно-бордовый фон */
+  --surface:  #231010;       /* чуть светлее — для карточек */
+  --gold:     #c9a84c;       /* золотой — основной акцент */
+  --gold-lt:  #e2c97e;       /* светло-золотой */
+  --cream:    #f5ede0;       /* кремовый — для заголовков */
+  --muted:    #9a7e6a;       /* приглушённый — для подписей */
+  --border:   rgba(201, 168, 76, 0.25); /* полупрозрачная золотая рамка */
+
+  --font-title: 'Cormorant Garamond', serif;  /* красивый шрифт для заголовков */
+  --font-text:  'Montserrat', sans-serif;     /* чистый шрифт для текста */
+}
+
+
+/* ===== СБРОС СТИЛЕЙ =====
+   Браузер добавляет свои отступы — убираем их  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* размеры считаются с учётом рамок */
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+html {
+  scroll-behavior: smooth; /* плавная прокрутка при клике на ссылки-якоря */
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none; /* убираем подчёркивание у ссылок */
+  color: inherit;
+}
+
+ul {
+  list-style: none; /* убираем точки у списков */
+}
+
+
+/* ===== ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ===== */
+
+/* маленькая золотая надпись над заголовком */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;   /* расстояние между буквами */
+  text-transform: uppercase; /* заглавные буквы */
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* все h2 — большой шрифт с засечками */
+h2 {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 3.2rem); /* clamp = минимум, предпочтительно, максимум */
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 24px;
+}
+
+/* em внутри заголовков — курсив золотого цвета */
+h2 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+/* ===== КНОПКИ ===== */
+.btn-gold {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--gold);
+  color: var(--bg);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background 0.3s; /* плавное изменение при наведении */
+}
+.btn-gold:hover {
+  background-color: var(--gold-lt); /* светлее при наведении мыши */
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: transparent;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: 1px solid var(--gold);
+  transition: background 0.3s;
+}
+.btn-outline:hover {
+  background-color: rgba(201, 168, 76, 0.1);
+}
+
+
+/* ================================================
+   ШАПКА (HEADER)
+   ================================================ */
+.header {
+  position: fixed;        /* прилипает к верху при прокрутке */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;           /* поверх всех элементов */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 60px;
+  background-color: rgba(18, 8, 8, 0.92);
+  backdrop-filter: blur(10px); /* размытие фона за шапкой */
+  border-bottom: 1px solid var(--border);
+}
+
+.header .logo {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+/* ссылки в навигации */
+.header nav {
+  display: flex;
+  gap: 32px;
+}
+.header nav a {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+.header nav a:hover {
+  color: var(--gold-lt);
+}
+
+
+/* ================================================
+   ГЛАВНЫЙ ЭКРАН (HERO)
+   ================================================ */
+.hero {
+  min-height: 100vh;       /* на весь экран */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 60px 80px;
+  /* фоновый градиент — тёмное бордо с лёгким свечением */
+  background: radial-gradient(ellipse 70% 60% at 75% 40%, rgba(139, 69, 19, 0.2) 0%, transparent 70%),
+              linear-gradient(160deg, #1a0d0d 0%, #0d0505 100%);
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+}
+
+.tagline {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+/* блок с цифрами внизу hero */
+.stats {
+  display: flex;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.stat strong {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.stat span {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+
+/* ================================================
+   О КОМПАНИИ
+   ================================================ */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* две колонки одинаковой ширины */
+  gap: 64px;
+  padding: 100px 60px;
+  max-width: 1200px;
+  margin: 0 auto; /* центрируем блок */
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 16px;
+  max-width: 460px;
+}
+
+/* цитата с золотой полоской слева */
+blockquote {
+  margin-top: 28px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--gold);
+  background-color: var(--surface);
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gold-lt);
+  border-radius: 0 4px 4px 0;
+}
+
+/* сетка карточек 2×2 */
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px); /* поднимается при наведении */
+  border-color: var(--gold);
+}
+
+.card .icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.card h4 {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.card p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
+/* ================================================
+   ПРОДУКТЫ
+   ================================================ */
+.products {
+  background-color: #120808; /* чуть темнее фон для контраста */
+  padding: 100px 60px;
+}
+
+.products .eyebrow,
+.products h2 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* сетка карточек продуктов — 3 колонки */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.product-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden; /* скрывает то что выходит за рамки */
+  transition: transform 0.3s, border-color 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+}
+
+/* выделенная карточка (bestseller) */
+.product-card.featured {
+  border-color: var(--gold);
+  position: relative;
+}
+.product-card.featured::before {
+  /* псевдоэлемент — значок поверх карточки */
+  content: 'bestseller';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--gold);
+  color: var(--bg);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+/* цветные заглушки вместо фото */
+.product-img {
+  height: 180px;
+}
+.img1 { background: linear-gradient(135deg, #3d1a1a, #7a3535); }
+.img2 { background: linear-gradient(135deg, #1a2a3d, #2a4560); }
+.img3 { background: linear-gradient(135deg, #1a1a3d, #2a2a60); }
+.img4 { background: linear-gradient(135deg, #1a3d2a, #2a6040); }
+.img5 { background: linear-gradient(135deg, #3d3a1a, #605a2a); }
+.img6 { background: linear-gradient(135deg, #3d1a3d, #602a60); }
+
+.product-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--cream);
+  padding: 16px 18px 6px;
+}
+.product-card p {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 0 18px 18px;
+}
+
+
+/* ================================================
+   РЕЗУЛЬТАТЫ
+   ================================================ */
+.results {
+  padding: 100px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* сетка 4 карточки в ряд */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.result-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 32px 22px;
+  text-align: center;
+}
+
+/* большое число */
+.result-card strong {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.result-card h4 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.result-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* особая карточка с золотым фоном */
+.gold-card {
+  background: linear-gradient(135deg, var(--surface), rgba(201, 168, 76, 0.12));
+  border-color: var(--gold);
+}
+
+
+/* ================================================
+   ОТЗЫВЫ
+   ================================================ */
+.reviews {
+  background-color: #120808;
+  padding: 100px 60px;
+  max-width: 100%;
+}
+
+.reviews .eyebrow,
+.reviews h2 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* сетка 3 карточки */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.review-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 24px;
+}
+.review-card p {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.review-card strong {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+
+/* ================================================
+   ПАРТНЁРЫ
+   ================================================ */
+.partners {
+  padding: 100px 60px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* сетка 3 партнёра в ряд */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 40px 0 32px;
+}
+
+.partner {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 20px;
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  color: var(--cream);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.partner:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.geography {
+  font-size: 13px;
+  color: var(--muted);
+}
+.geography strong {
+  color: var(--gold);
+}
+
+
+/* ================================================
+   КОНТАКТЫ
+   ================================================ */
+.contact {
+  background-color: #120808;
+  padding: 100px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info ul {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-info li {
+  font-size: 14px;
+  color: var(--cream);
+}
+
+.contact-social {
+  text-align: center;
+}
+
+/* крупный хэндл @sau_cosm */
+.handle {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.contact-social p {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+
+/* ================================================
+   ПОДВАЛ (FOOTER)
+   ================================================ */
+footer {
+  background-color: #120808;
+  border-top: 1px solid var(--border);
+  padding: 40px 60px;
+  text-align: center;
+}
+
+footer .logo {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+footer p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+footer em {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--gold-lt);
+}
+
+
+/* ================================================
+   АДАПТИВНОСТЬ (ПЛАНШЕТ И ТЕЛЕФОН)
+   ================================================ */
+
+/* планшет — ширина до 1024px */
+@media (max-width: 1024px) {
+  .header { padding: 16px 30px; }
+  .hero { padding: 120px 30px 60px; }
+  .about { grid-template-columns: 1fr; padding: 80px 30px; }
+  .products { padding: 80px 30px; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .results { padding: 80px 30px; }
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews { padding: 80px 30px; }
+  .reviews-grid { grid-template-columns: 1fr; max-width: 600px; }
+  .partners { padding: 80px 30px; }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact { padding: 80px 30px; grid-template-columns: 1fr; }
+  footer { padding: 32px 30px; }
+}
+
+/* телефон — ширина до 640px */
+@media (max-width: 640px) {
+  .header nav { display: none; } /* скрываем меню на телефоне */
+  .hero h1 { font-size: 3.5rem; }
+  .stats { flex-direction: column; gap: 20px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr 1fr; }
+  .partners-grid { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr; }
+}
