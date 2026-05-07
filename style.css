@@ -26,12 +26,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* размеры считаются с учётом рамок */
+  box-sizing: border-box;
 }
 
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
 html {
-  scroll-behavior: smooth; /* плавная прокрутка при клике на ссылки-якоря */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -43,38 +43,34 @@ body {
 }
 
 a {
-  text-decoration: none; /* убираем подчёркивание у ссылок */
+  text-decoration: none;
   color: inherit;
 }
 
 ul {
-  list-style: none; /* убираем точки у списков */
+  list-style: none;
 }
 
 
 /* ===== ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ===== */
-
-/* маленькая золотая надпись над заголовком */
 .eyebrow {
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.25em;   /* расстояние между буквами */
-  text-transform: uppercase; /* заглавные буквы */
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
   color: var(--gold);
   display: block;
   margin-bottom: 12px;
 }
 
-/* все h2 — большой шрифт с засечками */
 h2 {
   font-family: var(--font-title);
-  font-size: clamp(2rem, 5vw, 3.2rem); /* clamp = минимум, предпочтительно, максимум */
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 300;
   color: var(--cream);
   margin-bottom: 24px;
 }
 
-/* em внутри заголовков — курсив золотого цвета */
 h2 em {
   font-style: italic;
   color: var(--gold-lt);
@@ -91,10 +87,10 @@ h2 em {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: background 0.3s; /* плавное изменение при наведении */
+  transition: background 0.3s;
 }
 .btn-gold:hover {
-  background-color: var(--gold-lt); /* светлее при наведении мыши */
+  background-color: var(--gold-lt);
 }
 
 .btn-outline {
@@ -119,17 +115,17 @@ h2 em {
    ШАПКА (HEADER)
    ================================================ */
 .header {
-  position: fixed;        /* прилипает к верху при прокрутке */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;           /* поверх всех элементов */
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 18px 60px;
   background-color: rgba(18, 8, 8, 0.92);
-  backdrop-filter: blur(10px); /* размытие фона за шапкой */
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -141,7 +137,6 @@ h2 em {
   color: var(--gold);
 }
 
-/* ссылки в навигации */
 .header nav {
   display: flex;
   gap: 32px;
@@ -163,12 +158,11 @@ h2 em {
    ГЛАВНЫЙ ЭКРАН (HERO)
    ================================================ */
 .hero {
-  min-height: 100vh;       /* на весь экран */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 140px 60px 80px;
-  /* фоновый градиент — тёмное бордо с лёгким свечением */
   background: radial-gradient(ellipse 70% 60% at 75% 40%, rgba(139, 69, 19, 0.2) 0%, transparent 70%),
               linear-gradient(160deg, #1a0d0d 0%, #0d0505 100%);
 }
@@ -201,7 +195,6 @@ h2 em {
   margin-bottom: 60px;
 }
 
-/* блок с цифрами внизу hero */
 .stats {
   display: flex;
   gap: 48px;
@@ -229,11 +222,11 @@ h2 em {
    ================================================ */
 .about {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* две колонки одинаковой ширины */
+  grid-template-columns: 1fr 1fr;
   gap: 64px;
   padding: 100px 60px;
   max-width: 1200px;
-  margin: 0 auto; /* центрируем блок */
+  margin: 0 auto;
 }
 
 .about-text p {
@@ -242,7 +235,6 @@ h2 em {
   max-width: 460px;
 }
 
-/* цитата с золотой полоской слева */
 blockquote {
   margin-top: 28px;
   padding: 20px 24px;
@@ -255,7 +247,6 @@ blockquote {
   border-radius: 0 4px 4px 0;
 }
 
-/* сетка карточек 2×2 */
 .about-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -270,7 +261,7 @@ blockquote {
   transition: transform 0.3s, border-color 0.3s;
 }
 .card:hover {
-  transform: translateY(-4px); /* поднимается при наведении */
+  transform: translateY(-4px);
   border-color: var(--gold);
 }
 
@@ -295,7 +286,7 @@ blockquote {
    ПРОДУКТЫ
    ================================================ */
 .products {
-  background-color: #120808; /* чуть темнее фон для контраста */
+  background-color: #120808;
   padding: 100px 60px;
 }
 
@@ -306,20 +297,21 @@ blockquote {
   margin-right: auto;
 }
 
+/* сетка 3 колонки */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   max-width: 1200px;
   margin: 40px auto 0;
-  align-items: start;
 }
 
 .product-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  overflow: hidden; /* скрывает то что выходит за рамки */
+  overflow: hidden;
+  position: relative;        /* ВАЖНО: position здесь, а не только в featured */
   transition: transform 0.3s, border-color 0.3s;
 }
 .product-card:hover {
@@ -327,14 +319,14 @@ blockquote {
   border-color: var(--gold);
 }
 
-/* выделенная карточка (bestseller) */
+/* ИСПРАВЛЕНо: featured теперь не ломает сетку */
 .product-card.featured {
   border-color: var(--gold);
-  position: relative;
 }
+
 .product-card.featured::before {
   content: 'bestseller';
-  position: absolute;
+  position: absolute;        /* абсолютно внутри карточки */
   top: 12px;
   left: 12px;
   z-index: 1;
@@ -347,9 +339,11 @@ blockquote {
   padding: 3px 10px;
   border-radius: 100px;
 }
+
 /* цветные заглушки вместо фото */
 .product-img {
   height: 180px;
+  width: 100%;               /* занимает всю ширину карточки */
 }
 .img1 { background: linear-gradient(135deg, #3d1a1a, #7a3535); }
 .img2 { background: linear-gradient(135deg, #1a2a3d, #2a4560); }
@@ -380,7 +374,6 @@ blockquote {
   margin: 0 auto;
 }
 
-/* сетка 4 карточки в ряд */
 .results-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -396,7 +389,6 @@ blockquote {
   text-align: center;
 }
 
-/* большое число */
 .result-card strong {
   display: block;
   font-family: var(--font-title);
@@ -416,7 +408,6 @@ blockquote {
   color: var(--muted);
 }
 
-/* особая карточка с золотым фоном */
 .gold-card {
   background: linear-gradient(135deg, var(--surface), rgba(201, 168, 76, 0.12));
   border-color: var(--gold);
@@ -429,7 +420,6 @@ blockquote {
 .reviews {
   background-color: #120808;
   padding: 100px 60px;
-  max-width: 100%;
 }
 
 .reviews .eyebrow,
@@ -439,7 +429,6 @@ blockquote {
   margin-right: auto;
 }
 
-/* сетка 3 карточки */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -479,7 +468,6 @@ blockquote {
   margin: 0 auto;
 }
 
-/* сетка 3 партнёра в ряд */
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -540,7 +528,6 @@ blockquote {
   text-align: center;
 }
 
-/* крупный хэндл @sau_cosm */
 .handle {
   font-family: var(--font-title);
   font-size: 2.8rem;
@@ -587,10 +574,8 @@ footer em {
 
 
 /* ================================================
-   АДАПТИВНОСТЬ (ПЛАНШЕТ И ТЕЛЕФОН)
+   АДАПТИВНОСТЬ
    ================================================ */
-
-/* планшет — ширина до 1024px */
 @media (max-width: 1024px) {
   .header { padding: 16px 30px; }
   .hero { padding: 120px 30px 60px; }
@@ -607,9 +592,8 @@ footer em {
   footer { padding: 32px 30px; }
 }
 
-/* телефон — ширина до 640px */
 @media (max-width: 640px) {
-  .header nav { display: none; } /* скрываем меню на телефоне */
+  .header nav { display: none; }
   .hero h1 { font-size: 3.5rem; }
   .stats { flex-direction: column; gap: 20px; }
   .product-grid { grid-template-columns: 1fr; }
