@@ -333,11 +333,11 @@ blockquote {
   position: relative;
 }
 .product-card.featured::before {
-  /* псевдоэлемент — значок поверх карточки */
   content: 'bestseller';
   position: absolute;
   top: 12px;
   left: 12px;
+  z-index: 1;
   background-color: var(--gold);
   color: var(--bg);
   font-size: 10px;
@@ -347,7 +347,6 @@ blockquote {
   padding: 3px 10px;
   border-radius: 100px;
 }
-
 /* цветные заглушки вместо фото */
 .product-img {
   height: 180px;
