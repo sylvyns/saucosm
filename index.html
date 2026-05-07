@@ -1,250 +1,376 @@
 <!DOCTYPE html>
-
-<!-- DOCTYPE говорит браузеру что это HTML5 страница -->
-
 <html lang="ru">
 
 <head>
-  <!-- head — невидимая часть, здесь настройки страницы -->
-  <meta charset="UTF-8"> <!-- кодировка, чтобы работали русские буквы -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- адаптация под телефон -->
-  <title>SAUCOSM — Premium Cosmetics</title> <!-- название вкладки в браузере -->
-  <link rel="stylesheet" href="style.css"> <!-- подключаем наш файл стилей -->
-  <!-- подключаем красивые шрифты с Google Fonts (бесплатно) -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAUCOSM — Premium Cosmetics</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<!-- body — видимая часть страницы, всё что видит пользователь -->
 
-  <!-- ===== ШАПКА (НАВИГАЦИЯ) ===== -->
+  <!-- HEADER -->
 
   <header class="header">
     <div class="logo">SAUCOSM</div>
+
     <nav>
       <a href="#about">О нас</a>
       <a href="#products">Продукты</a>
       <a href="#results">Результаты</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <!-- кнопка ведёт на раздел контактов -->
+
     <a href="#contact" class="btn-gold">Купить</a>
   </header>
 
-  <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
+  <!-- HERO -->
 
   <section class="hero">
     <p class="eyebrow">Kazakhstan · Almaty</p>
-    <h1>PREMIUM<br><em>COSMETICS</em></h1>
-    <p class="tagline">Раскрой своё природное совершенство</p>
+
+    <h1>
+      PREMIUM<br>
+      <em>COSMETICS</em>
+    </h1>
+
+    <p class="tagline">
+      Раскрой своё природное совершенство
+    </p>
+
     <div class="hero-buttons">
       <a href="#products" class="btn-gold">Каталог</a>
       <a href="#about" class="btn-outline">О бренде</a>
     </div>
-    <!-- блок с ключевыми цифрами -->
+
     <div class="stats">
+
       <div class="stat">
         <strong>10 000+</strong>
         <span>Довольных клиентов</span>
       </div>
+
       <div class="stat">
         <strong>50+</strong>
         <span>Продуктов в каталоге</span>
       </div>
+
       <div class="stat">
         <strong>2019</strong>
         <span>Год основания</span>
       </div>
+
     </div>
   </section>
 
-  <!-- ===== О КОМПАНИИ ===== -->
+  <!-- ABOUT -->
 
   <section class="about" id="about">
-    <!-- левая колонка — текст -->
+
     <div class="about-text">
+
       <p class="eyebrow">О компании</p>
-      <h2>История и <em>миссия</em></h2>
-      <p>SAUCOSM основан Albina Sauytbay в Алматы. Наша цель — создавать косметику, которая раскрывает естественную красоту каждой женщины.</p>
-      <p>Мы объединяем современную науку и природные ингредиенты для продуктов премиального класса.</p>
+
+      <h2>
+        История и <em>миссия</em>
+      </h2>
+
+      <p>
+        SAUCOSM основан в Алматы. Наша цель —
+        создавать косметику, которая раскрывает
+        естественную красоту каждой женщины.
+      </p>
+
+      <p>
+        Мы объединяем современные технологии
+        и натуральные ингредиенты для создания
+        премиального ухода.
+      </p>
+
       <blockquote>
-        Делать каждую женщину увереннее в себе через продукты, которые работают и вдохновляют.
+        Делать каждую женщину увереннее в себе через продукты,
+        которые работают и вдохновляют.
       </blockquote>
+
     </div>
-    <!-- правая колонка — карточки преимуществ -->
+
     <div class="about-cards">
+
       <div class="card">
         <span class="icon">🌿</span>
         <h4>Натуральное сырьё</h4>
         <p>Без парабенов и сульфатов</p>
       </div>
+
       <div class="card">
         <span class="icon">🏅</span>
         <h4>Сертифицированное качество</h4>
         <p>Тесты в лаборатории EU</p>
       </div>
+
       <div class="card">
         <span class="icon">🇰🇿</span>
         <h4>Казахстанский бренд</h4>
         <p>Создан для нашего климата</p>
       </div>
+
       <div class="card">
         <span class="icon">🚚</span>
         <h4>Быстрая доставка</h4>
         <p>1–3 дня по всему Казахстану</p>
       </div>
+
     </div>
   </section>
 
-  <!-- ===== ПРОДУКТЫ ===== -->
+  <!-- PRODUCTS -->
 
- <section class="products" id="products">
-  <p class="eyebrow">Наши продукты</p>
-  <h2>Линейки <em>ухода и красоты</em></h2>
+  <section class="products" id="products">
 
-  <div class="product-grid">
+    <p class="eyebrow">Наши продукты</p>
 
-    <div class="product-card featured">
-      <div class="product-img img1"></div>
-      <h3>Collagen Sakura</h3>
-      <p>Увлажняющая серия на основе коллагена и экстракта сакуры</p>
+    <h2>
+      Линейки <em>ухода и красоты</em>
+    </h2>
+
+    <div class="product-grid">
+
+      <div class="product-card featured">
+        <div class="product-img img1"></div>
+
+        <h3>Collagen Sakura</h3>
+
+        <p>
+          Увлажняющая серия на основе
+          коллагена и экстракта сакуры
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img img2"></div>
+
+        <h3>Retinol & Peptide Serum</h3>
+
+        <p>
+          Антивозрастная сыворотка —
+          упругость и эластичность
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img img3"></div>
+
+        <h3>Hyaluronic Moisture Cream</h3>
+
+        <p>
+          Глубокое увлажнение на 24 часа
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img img4"></div>
+
+        <h3>Clay Detox Mask</h3>
+
+        <p>
+          Очищает поры и выравнивает тон кожи
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img img5"></div>
+
+        <h3>UV Shield SPF 50+</h3>
+
+        <p>
+          Ежедневная защита от солнца и уход
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img img6"></div>
+
+        <h3>Eye Contour Cream</h3>
+
+        <p>
+          Убирает тёмные круги и отёки
+        </p>
+      </div>
+
     </div>
-
-    <div class="product-card">
-      <div class="product-img img2"></div>
-      <h3>Retinol & Peptide Serum</h3>
-      <p>Антивозрастная сыворотка — упругость и эластичность</p>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img img3"></div>
-      <h3>Hyaluronic Moisture Cream</h3>
-      <p>Глубокое увлажнение на 24 часа</p>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img img4"></div>
-      <h3>Clay Detox Mask</h3>
-      <p>Очищает поры, выравнивает тон кожи</p>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img img5"></div>
-      <h3>UV Shield SPF 50+</h3>
-      <p>Ежедневная защита от солнца и уход</p>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img img6"></div>
-      <h3>Eye Contour Cream</h3>
-      <p>Убирает тёмные круги и отёки</p>
-    </div>
-
-  </div>
-</section>
-
-</div>
-```
-
   </section>
 
-  <!-- ===== РЕЗУЛЬТАТЫ ===== -->
+  <!-- RESULTS -->
 
   <section class="results" id="results">
+
     <p class="eyebrow">Клинические результаты</p>
-    <h2>Доказанная <em>эффективность</em></h2>
+
+    <h2>
+      Доказанная <em>эффективность</em>
+    </h2>
+
     <div class="results-grid">
+
       <div class="result-card">
         <strong>+80%</strong>
         <h4>Увлажнение</h4>
         <p>После 4 недель применения</p>
       </div>
+
       <div class="result-card">
         <strong>+65%</strong>
         <h4>Эластичность</h4>
         <p>Кожа упругая через 2 недели</p>
       </div>
+
       <div class="result-card">
         <strong>−40%</strong>
         <h4>Видимые поры</h4>
         <p>Сужение за 14 дней</p>
       </div>
+
       <div class="result-card gold-card">
         <strong>+90%</strong>
         <h4>Сияние и тон</h4>
         <p>Заметный эффект на 7-й день</p>
       </div>
+
     </div>
   </section>
 
-  <!-- ===== ОТЗЫВЫ ===== -->
+  <!-- REVIEWS -->
 
   <section class="reviews">
+
     <p class="eyebrow">Отзывы клиентов</p>
-    <h2>Что говорят <em>о нас</em></h2>
+
+    <h2>
+      Что говорят <em>о нас</em>
+    </h2>
+
     <div class="reviews-grid">
+
       <div class="review-card">
-        <p>"SAUCOSM изменил мою рутину ухода. Collagen Sakura — просто чудо, кожа стала намного мягче уже через неделю!"</p>
+        <p>
+          "SAUCOSM изменил мою рутину ухода.
+          Collagen Sakura — просто чудо."
+        </p>
+
         <strong>Айгерим М. — Алматы ★★★★★</strong>
       </div>
+
       <div class="review-card">
-        <p>"Crystal Gloss — мой любимый блеск. Держится весь день, выглядит роскошно."</p>
+        <p>
+          "Crystal Gloss — мой любимый блеск.
+          Держится весь день."
+        </p>
+
         <strong>Дана С. — Алматы ★★★★★</strong>
       </div>
+
       <div class="review-card">
-        <p>"Тушь Volume Curl Mascara — лучшая, что я пробовала. Ресницы как накладные, держится весь день."</p>
+        <p>
+          "Volume Curl Mascara —
+          лучшая тушь, что я пробовала."
+        </p>
+
         <strong>Aida N. — Алматы ★★★★★</strong>
       </div>
+
     </div>
   </section>
 
-  <!-- ===== ПАРТНЁРЫ ===== -->
+  <!-- PARTNERS -->
 
   <section class="partners">
+
     <p class="eyebrow">Официальные партнёры</p>
-    <h2>Наши <em>партнёры</em></h2>
+
+    <h2>
+      Наши <em>партнёры</em>
+    </h2>
+
     <div class="partners-grid">
+
       <div class="partner">Saks Fifth Avenue</div>
       <div class="partner">Золотое яблоко</div>
       <div class="partner">Л'Этуаль</div>
-      <div class="partner">Красное Яблоко</div>
       <div class="partner">Douglas</div>
       <div class="partner">Ile Amal</div>
+      <div class="partner">Beauty Market</div>
+
     </div>
+
     <p class="geography">
-      Наша география: <strong>Казахстан · Россия · Узбекистан · ОАЭ</strong>
+      Наша география:
+      <strong>
+        Казахстан · Россия · Узбекистан · ОАЭ
+      </strong>
     </p>
+
   </section>
 
-  <!-- ===== КОНТАКТЫ ===== -->
+  <!-- CONTACT -->
 
   <section class="contact" id="contact">
+
     <div class="contact-info">
+
       <p class="eyebrow">Связаться с нами</p>
-      <h2>Контактная <em>информация</em></h2>
+
+      <h2>
+        Контактная <em>информация</em>
+      </h2>
+
       <ul>
         <li>☎ +7 (727) 123-45-67</li>
         <li>✉ info@saucosm.kz</li>
         <li>🌐 www.saucosm.kz</li>
-        <li>📍 г. Алматы, ул. Абая 50, оф. 12</li>
+        <li>📍 Алматы, ул. Абая 50</li>
         <li>📸 Instagram: @sau_cosm</li>
-        <li>✈ Telegram: @saucosm_official</li>
       </ul>
+
     </div>
+
     <div class="contact-social">
+
       <p class="handle">@sau_cosm</p>
-      <p>Instagram · Telegram · WhatsApp</p>
-      <!-- замените номер на реальный: 7 + номер без пробелов -->
-      <a href="https://wa.me/77271234567" class="btn-gold" target="_blank">Написать в WhatsApp</a>
+
+      <p>
+        Instagram · Telegram · WhatsApp
+      </p>
+
+      <a
+        href="https://wa.me/77271234567"
+        class="btn-gold"
+        target="_blank"
+      >
+        Написать в WhatsApp
+      </a>
+
     </div>
+
   </section>
 
-  <!-- ===== ПОДВАЛ ===== -->
+  <!-- FOOTER -->
 
   <footer>
+
     <p class="logo">SAUCOSM</p>
-    <p>© 2024 SAUCOSM Premium Cosmetics · Kazakhstan, Almaty</p>
-    <p><em>Красота — это наша страсть</em></p>
+
+    <p>
+      © 2024 SAUCOSM Premium Cosmetics
+    </p>
+
+    <p>
+      <em>Красота — это наша страсть</em>
+    </p>
+
   </footer>
 
 </body>
